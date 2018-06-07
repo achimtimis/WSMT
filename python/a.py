@@ -40,10 +40,10 @@ def getValue(value):
 def getNode(treeArray, index):
     if (2*index + 1 >= len(treeArray)) or (2*index + 2 >= len(treeArray)) or (index >= len(treeArray)):
             return Node(treeArray[index])
-    node = Node(treeArray[index])
-    node.left = getNode(treeArray, 2*index + 1)
-    node.right = getNode(treeArray, 2*index + 2)
-    return node
+    tempNode = Node(treeArray[index])
+    tempNode.left = getNode(treeArray, 2*index + 1)
+    tempNode.right = getNode(treeArray, 2*index + 2)
+    return tempNode
 
 
 def runTests():

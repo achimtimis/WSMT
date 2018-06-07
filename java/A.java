@@ -46,7 +46,7 @@ public class A {
         System.out.println("Hello World!");
         String treeArray = "";
         try {
-            treeArray = Files.readAllLines(Paths.get(testFilePath)).get(1);
+            treeArray = Files.readAllLines(Paths.get(testFilePath)).get(0);
         } catch (Exception e) {
         }
         String[] nodes = treeArray.split(" ");
@@ -56,13 +56,13 @@ public class A {
     }
 
     public static Node getNode(String[] treeArray, int index) {
-        if ((2 * index + 1 >= treeArray.length) || (2 * index + 2 >= treeArray.length) || (index >= treeArray.length)) {
+        if (((2 * index + 1) >= treeArray.length) || ((2 * index + 2) >= treeArray.length) || (index >= treeArray.length)) {
             return new Node(treeArray[index]);
         }
-        node = new Node(treeArray[index]);
-        node.setLeft(getNode(treeArray, 2 * index + 1));
-        node.setRight(getNode(treeArray, 2 * index + 2));
-        return node;
+        Node tempNode = new Node(treeArray[index]);
+        tempNode.setLeft(getNode(treeArray, 2 * index + 1));
+        tempNode.setRight(getNode(treeArray, 2 * index + 2));
+        return tempNode;
     }
 
     // A function to do postorder tree traversal
