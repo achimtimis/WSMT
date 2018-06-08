@@ -6,9 +6,11 @@ How to run:
 - Python: python3 a.py
 - Php: php a.php
 - NodeJs: 
-- C#: add csc to path; csc A.cs; ./A
-
-
-
+- C#: add csc to path; csc A.cs; ./A ; c:\windows\Microsoft.NET\Framework\v4.0.30319\csc.exe a
 
 c:\windows\Microsoft.NET\Framework\v4.0.30319\csc.exe a
+
+Example array representation for binary tree
+
+![](http://www.cse.hut.fi/en/research/SVG/TRAKLA2/tutorials/heap_tutorial/KekoTRAKLA-89_1.gif?raw=true)
+
