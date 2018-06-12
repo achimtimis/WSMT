@@ -38,10 +38,15 @@ printPostorder($root);
 
 function getNode($treeArray, $index) {
 
-    if ((((2 * $index) + 1) > count($treeArray)) || (((2 * $index) + 2) > count($treeArray)) || ($index >= count($treeArray))) {
+    if ((((2 * $index) + 1) >= count($treeArray)) || (((2 * $index) + 2) >= count($treeArray)) || ($index >= count($treeArray))) {
         $tempnode2 = new Node();
         $tempnode2->key = $treeArray[$index];
         return $tempnode2;
+    }
+    if ($treeArray[$index] == "-1"){
+      $tempnode2 = new Node();
+      $tempnode2->key = $treeArray[$index];
+      return $tempnode2;
     }
     $tempNode = new Node();
     $tempNode->key = $treeArray[$index];
@@ -53,7 +58,7 @@ function getNode($treeArray, $index) {
 }
 
  function printPostorder($root) {
-    if ($root != null) {
+    if ($root != null && $root->key != "-1") {
 
         // First recur on left child
         printPostorder($root->left);

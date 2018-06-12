@@ -38,6 +38,9 @@ namespace HelloWorld
         if ((2 * index + 1 >= treeArray.Length) || (2 * index + 2 >= treeArray.Length) || (index >= treeArray.Length)) {
             return new Node(treeArray[index]);
         }
+        if (treeArray[index].Equals("-1")){
+            return new Node(treeArray[index]);
+        }
         Node tempNode = new Node(treeArray[index]);
 
         tempNode.left = getNode(treeArray, 2 * index + 1);
@@ -48,7 +51,7 @@ namespace HelloWorld
     }
 
         public static void printPostorder(Node root) {
-        if (root != null) {
+        if (root != null && !root.key.Equals("-1")) {
 
             // First recur on left child
             printPostorder(root.left);

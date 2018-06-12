@@ -21,7 +21,7 @@ function Node(key) {
 }
 
 function printPostOrder(root) {
-    if (root !== null) {
+    if (root !== null && root.key != "-1") {
 
         // First recur on left child
         printPostOrder(root.left);
@@ -38,6 +38,9 @@ function printPostOrder(root) {
 
 function getNode(treeArray, index) {
     if ((2 * index + 1 >= treeArray.length) || (2 * index + 2 >= treeArray.length) || (index >= treeArray.length)) {
+        return new Node(treeArray[index]);
+    }
+    if (treeArray[index] === "-1"){
         return new Node(treeArray[index]);
     }
     var tempNode = new Node(treeArray[index]);

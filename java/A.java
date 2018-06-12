@@ -59,15 +59,24 @@ public class A {
         if (((2 * index + 1) >= treeArray.length) || ((2 * index + 2) >= treeArray.length) || (index >= treeArray.length)) {
             return new Node(treeArray[index]);
         }
+        if (treeArray[index].equals("-1")){
+            return new Node(treeArray[index]);
+        }
         Node tempNode = new Node(treeArray[index]);
-        tempNode.setLeft(getNode(treeArray, 2 * index + 1));
-        tempNode.setRight(getNode(treeArray, 2 * index + 2));
+
+        // if (!String.valueOf(treearray[2 * index + 1]).equals("-1")){
+            tempNode.setLeft(getNode(treeArray, 2 * index + 1));
+
+        // } else if (!String.valueOf(treearray[2 * index + 2]).equals("-1")){
+            tempNode.setRight(getNode(treeArray, 2 * index + 2));
+
+        // }
         return tempNode;
     }
 
     // A function to do postorder tree traversal
     public static void printPostorder(Node root) {
-        if (root != null) {
+        if (root != null && !root.getKey().equals("-1")) {
 
             // First recur on left child
             printPostorder(root.getLeft());

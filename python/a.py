@@ -17,7 +17,7 @@ class Node:
 
 # A function to do postorder tree traversal
 def printPostorder(root):
-    if root:
+    if root and root.val != "-1":
  
         # First recur on left child
         printPostorder(root.left)
@@ -40,6 +40,8 @@ def getValue(value):
 def getNode(treeArray, index):
     if (2*index + 1 >= len(treeArray)) or (2*index + 2 >= len(treeArray)) or (index >= len(treeArray)):
             return Node(treeArray[index])
+    if treeArray[index] == "-1":
+        return Node(treeArray[index])
     tempNode = Node(treeArray[index])
     tempNode.left = getNode(treeArray, 2*index + 1)
     tempNode.right = getNode(treeArray, 2*index + 2)
@@ -58,7 +60,7 @@ def runTests():
     
 
 def main():
-    runTests()
+    # runTests()
     result.clear()
 
     file = open(str(sys.argv[1]), "r") #/mnt/c/linux/wsmt-5programs/test.txt
