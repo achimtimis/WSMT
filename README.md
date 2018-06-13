@@ -10,8 +10,8 @@ How to run:
 
 c:\windows\Microsoft.NET\Framework\v4.0.30319\csc.exe a
 
-In my implementation, the non-existing nodes are reprezented by the "-1" as to ensure that we can implement/parse incomplete trees.
-
+- In my implementation, the non-existing nodes are reprezented by the "-1" as to ensure that we can implement/parse incomplete trees.
+- the tree is defined in the first line of the input file, the rest being just a helper "human readable representation".
 
 Example array representation for binary tree
 
